@@ -26,21 +26,25 @@ function CourseCardBase({ course }: Props) {
         hover:shadow-md hover:-translate-y-0.5
       "
     >
-      {/* Image */}
-      <div className="relative aspect-[16/10] w-full overflow-hidden">
-        <SafeImage
-          src={imageUrl || "/placeholder.svg"}
-          alt={title || "Course"}
-          fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1400px) 50vw, 33vw"
-          className="object-cover transition-transform duration-300 ease-out hover:scale-[1.03]"
-          priority={false}
-          fallbackSrc="/placeholder.svg"
-        />
+      <div className="p-3 sm:p-4">
+        <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden ring-1 ring-slate-200/60">
+          <SafeImage
+            src={imageUrl || "/placeholder.svg"}
+            alt={title || "Course"}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1400px) 50vw, 33vw"
+            className="object-cover transition-transform duration-300 ease-out hover:scale-[1.03]"
+            priority={false}
+            fallbackSrc="/placeholder.svg"
+          />
+        </div>
       </div>
 
       <div className="p-4 space-y-2">
-        {/* Tags row (icon + text chips) */}
+        <h3 className="font-heading text-base md:text-lg font-semibold leading-snug line-clamp-2">
+          {title}
+        </h3>
+
         {tags?.length ? (
           <div className="flex flex-wrap gap-2">
             {tags.slice(0, 4).map((t, i) => (
@@ -60,15 +64,10 @@ function CourseCardBase({ course }: Props) {
           </div>
         ) : null}
 
-        {/* Title & subtitle */}
-        <h3 className="text-base md:text-lg font-semibold leading-snug line-clamp-2">
-          {title}
-        </h3>
         {subtitle ? (
           <p className="text-sm text-slate-600 line-clamp-2">{subtitle}</p>
         ) : null}
 
-        {/* Price & CTA */}
         <div className="pt-1 flex items-center justify-between">
           <div className="flex items-baseline gap-2">
             {typeof salePrice === "number" ? (
@@ -80,13 +79,11 @@ function CourseCardBase({ course }: Props) {
               <span className="text-sm text-slate-500 line-through">
                 {formatGBP(regularPrice!)}
               </span>
-            ) : null}
+            ) : null}{" "}
+            in full
           </div>
 
-          <button
-            className="btn btn-outline btn-pill"
-            aria-label="View details"
-          >
+          <button className="btn  btn-pill" aria-label="View details">
             View details →
           </button>
         </div>

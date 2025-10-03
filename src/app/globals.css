@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Reusable tokens */
 @layer components {
   .card {
     @apply rounded-2xl shadow-sm bg-white;
@@ -23,13 +22,31 @@
   .btn-solid {
     @apply bg-black text-white hover:bg-black/90;
   }
+  .btn-green {
+    @apply text-slate-900;
+    background-color: #f6ffdb;
+    border: 1px solid #d4cfc8;
+  }
+
+  .btn-bg {
+    @apply text-slate-900;
+    background-color: #fbf6f1;
+    border: 1px solid #d4cfc8;
+  }
 
   .chip {
     @apply px-2 py-0.5 rounded-full bg-slate-100 text-xs text-slate-600;
   }
 }
 
-/* Utilities we rely on (no plugin needed) */
+@layer utilities {
+  .font-heading {
+    font-family: var(--font-plus-jakarta), ui-sans-serif, system-ui,
+      -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+      "Liberation Sans", sans-serif;
+  }
+}
+
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -38,7 +55,6 @@
   scrollbar-width: none;
 }
 
-/* Line clamp 2 without plugin */
 .line-clamp-2 {
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -48,7 +64,5 @@
 
 html,
 body {
-  /* background set in layout body class for safety too */
-  /* fallback if layout import gets edited */
-  background: #faf7f2;
+  background: #fdf5ec;
 }

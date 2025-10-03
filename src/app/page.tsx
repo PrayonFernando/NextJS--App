@@ -6,10 +6,9 @@ export default async function HomePage() {
 
   return (
     <>
-      {/* Hero / Heading to match the screenshot copy */}
       <header className="border-b border-black/5">
         <div className="container py-8 md:py-12 text-center">
-          <h1 className="text-2xl md:text-4xl font-bold">
+          <h1 className="font-heading text-2xl md:text-4xl font-extrabold">
             Master Your Career Growth with Our Top-Rated,
             <br className="hidden md:block" />
             Expert-Led Courses
@@ -17,7 +16,6 @@ export default async function HomePage() {
         </div>
       </header>
 
-      {/* Tabs + Grid + Actions */}
       <Catalog courses={courses} />
     </>
   );
