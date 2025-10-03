@@ -2,6 +2,10 @@
 
 A responsive courses catalog implementing the provided Figma design with a container grid and dynamic data from the public API.
 
+# LINK :
+
+`https://next-js-app-five-phi.vercel.app/`
+
 # -----Tech Stack------
 
 - Next.js (App Router) + TypeScript
