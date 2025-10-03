@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Reusable tokens */
+@layer components {
+  .card {
+    @apply rounded-2xl shadow-sm bg-white;
+  }
+  .card-border {
+    @apply border border-slate-200;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 font-medium transition;
+  }
+  .btn-pill {
+    @apply px-3 py-1.5 rounded-full text-sm;
+  }
+  .btn-outline {
+    @apply bg-white border border-slate-200 text-slate-700 hover:bg-slate-50;
+  }
+  .btn-solid {
+    @apply bg-black text-white hover:bg-black/90;
+  }
+
+  .chip {
+    @apply px-2 py-0.5 rounded-full bg-slate-100 text-xs text-slate-600;
+  }
+}
+
+/* Utilities we rely on (no plugin needed) */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Line clamp 2 without plugin */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+html,
+body {
+  /* background set in layout body class for safety too */
+  /* fallback if layout import gets edited */
+  background: #faf7f2;
+}
